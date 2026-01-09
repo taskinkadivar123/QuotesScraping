@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quotes</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<h1>📜 Quotes Collection</h1>
+
+{% for q in quotes %}
+    <div class="quote-box">
+        <p class="quote">“{{ q.quote }}”</p>
+        <p class="author">— {{ q.author }}</p>
+        <p class="tags">Tags: {{ q.tags }}</p>
+        <a href="{{ q.author_profile }}" target="_blank">Author Profile</a>
+    </div>
+{% endfor %}
+
+</body>
+</html>
